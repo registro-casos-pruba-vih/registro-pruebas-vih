@@ -1,0 +1,11 @@
+.group-form-container {
+    width: 100%;
+}
+
+.group-form-container .underline {
+    background-color: #ACACAC;
+    height: 2px;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}

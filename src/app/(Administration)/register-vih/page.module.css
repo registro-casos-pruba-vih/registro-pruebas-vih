@@ -1,0 +1,16 @@
+.main-container {
+    padding: 10px;
+}
+
+.main-container h1 {
+    color: var(--title-color);
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 30px;
+}

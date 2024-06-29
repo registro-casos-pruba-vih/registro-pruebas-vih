@@ -1,0 +1,7 @@
+.button-container {
+    background-color: var(--button-color);
+}
+
+.button-container:hover {
+    background-color: var(--button-color-hover);
+}
