@@ -16,7 +16,7 @@ import DetectionsForm from './components/DetectionsForm'
 
 const page = () => {
 
-  const [progress, setProgress] = React.useState(50);
+  const [progress, setProgress] = React.useState(0);
   const [buttonName, setButtonName] = React.useState('Siguiente');
 
   const initialValues: RegisterVihInterface = {
@@ -84,6 +84,21 @@ const page = () => {
       },
       sifilis: "",
       uroanalisis: "",
+      glucosa: "",
+      tipo_sangineo: "",
+      custionario_deteccion_violencia: "",
+      comorbilidad_asociada: "",
+      signos_alarma: "",
+      referencia: {
+        respuesta: "",
+        numero: "",
+        unidad_referencia: ""
+      },
+      desarrollo_comunitario: {
+        plan_seguridad: "",
+        metodo_planificacion_familiar: "",
+        registrar_metodo: ""
+      }
     }
   }
 

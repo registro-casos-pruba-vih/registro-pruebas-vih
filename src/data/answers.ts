@@ -90,3 +90,18 @@ export const reactive = [
         value: 'No se tamizo'
     }
 ]
+
+export const violenceDetection = [
+    {
+        label: "Negativo",
+        value: "Negativo"
+    },
+    {
+        label: "Positivo",
+        value: "Positivo"
+    },
+    {
+        label: "No se realizo",
+        value: "No se realizo"
+    }
+]

@@ -83,7 +83,7 @@ const validationForm = (values: RegisterVihInterface) => {
       }
     }
 
-    if (values.ficha_identificacion.numero_expediente === '' && values.ficha_identificacion.numero_expediente.length !== 6) {
+    if (values.ficha_identificacion.numero_expediente === '' || values.ficha_identificacion.numero_expediente.toString().length !== 6) {
       errors.ficha_identificacion = {
         ...errors.ficha_identificacion,
         numero_expediente: 'El numero de expediente debe tener 6 caracteres'

@@ -64,6 +64,21 @@ export interface RegisterVihInterface {
         }
         sifilis: "" | "Reactiva" | "No reactiva" | "No se tamizo"
         uroanalisis: "" | "positiva" | "negativa" | "No se realizo"
+        glucosa: string,
+        tipo_sangineo: string,
+        custionario_deteccion_violencia: "" | "Negativo" | "Positivo" | "No se realizo"
+        comorbilidad_asociada: string
+        signos_alarma: string
+        referencia: {
+            respuesta: "" | boolean
+            numero: "" | number
+            unidad_referencia: string
+        }
+        desarrollo_comunitario: {
+            plan_seguridad: "" | boolean
+            metodo_planificacion_familiar: "" | boolean
+            registrar_metodo: string
+        }
     }
 }
 
