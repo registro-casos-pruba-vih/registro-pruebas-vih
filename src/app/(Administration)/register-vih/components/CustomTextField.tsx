@@ -6,11 +6,12 @@ interface ICustomTextFieldProps {
     label: string
     value: any
     type?: string
+    readonly?: boolean
     error ?: string
     onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> | undefined
 }
 
-const CustomTextField = ({name, label, value, error, type='text', onChange}:ICustomTextFieldProps) => {
+const CustomTextField = ({name, label, value, error, type='text', onChange, readonly}:ICustomTextFieldProps) => {
   return (
     <Grid item xs={4}>
         <TextField
@@ -22,6 +23,7 @@ const CustomTextField = ({name, label, value, error, type='text', onChange}:ICus
             error = {error ? true : false}
             helperText = {error}
             type={type}
+            inputProps={{readOnly: readonly}}
         />
     </Grid>
   )

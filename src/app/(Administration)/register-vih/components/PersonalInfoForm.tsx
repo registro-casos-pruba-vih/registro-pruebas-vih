@@ -25,6 +25,7 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                 name="unidad_medica.nombre"
                 label="Nombre"
                 onChange={handleChange}
+                readonly
                 value={values.unidad_medica.nombre}
                 error={errors.unidad_medica?.nombre}
             />
@@ -81,7 +82,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="Calle"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.calle}
-                    error={errors.ficha_identificacion?.domicilio?.calle}
                 />
 
                 <CustomTextField
@@ -89,7 +89,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="No. exterior"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.numero_exterior}
-                    error={errors.ficha_identificacion?.domicilio?.numero_exterior}
                 />
 
                 <CustomTextField
@@ -97,7 +96,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="No. interior"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.numero_interior}
-                    error={errors.ficha_identificacion?.domicilio?.numero_interior}
                 />
 
                 <CustomTextField
@@ -105,7 +103,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="Colonia"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.colonia}
-                    error={errors.ficha_identificacion?.domicilio?.colonia}
                 />
 
                 <CustomTextField
@@ -113,7 +110,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="Localidad"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.localidad}
-                    error={errors.ficha_identificacion?.domicilio?.localidad}
                 />
 
                 <CustomTextField
@@ -121,7 +117,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     label="Municipio"
                     onChange={handleChange}
                     value={values.ficha_identificacion?.domicilio?.municipio}
-                    error={errors.ficha_identificacion?.domicilio?.municipio}
                 />
             </SubGroupForm>
 
@@ -142,7 +137,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     onChange={handleChange}
                     value={values.ficha_identificacion?.edad}
                     type='number'
-                    error={errors.ficha_identificacion?.edad}
                 />
 
                 <CustomTextField
@@ -167,6 +161,7 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     value={values.ficha_identificacion?.habla_lengua_indigena}
                     onChange={handleChange}
                     data={afirmativeAndNegative}
+                    error={errors.ficha_identificacion?.habla_lengua_indigena}
                 />
 
                 <CustomSelectField
@@ -175,6 +170,7 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     value={values.ficha_identificacion?.grado_escolar_concluido}
                     onChange={handleChange}
                     data={closedSchool}
+                    error={errors.ficha_identificacion?.grado_escolar_concluido}
                 />
 
                 <CustomSelectField
@@ -183,6 +179,7 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     value={values.ficha_identificacion?.seguridad_social}
                     onChange={handleChange}
                     data={socialSecurity}
+                    error={errors.ficha_identificacion?.seguridad_social}
                 />
 
                 <CustomTextField

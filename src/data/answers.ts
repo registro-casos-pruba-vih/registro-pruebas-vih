@@ -49,3 +49,44 @@ export const socialSecurity = [
         value: 'Ninguno'
     }
 ]
+
+export const typeResolution = [
+    {
+        label: 'Parto',
+        value: 'Parto'
+    },
+    {
+        label: 'Cesaria',
+        value: 'Cesaria'
+    },
+    {
+        label: 'Aborto',
+        value: 'Aborto'
+    }
+]
+
+export const riskObstetrico = [
+    {
+        label: 'Alto',
+        value: 'Alto'
+    },
+    {
+        label: 'Bajo',
+        value: 'Bajo'
+    }
+]
+
+export const reactive = [
+    {
+        label: 'Reactiva',
+        value: 'Reactiva'
+    },
+    {
+        label: 'No reactiva',
+        value: 'No reactiva'
+    },
+    {
+        label: 'No se tamizo',
+        value: 'No se tamizo'
+    }
+]

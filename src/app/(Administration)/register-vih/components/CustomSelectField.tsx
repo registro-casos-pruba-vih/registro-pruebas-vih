@@ -10,9 +10,10 @@ interface ICustomSelectFieldProps {
         value: any
     }[]
     onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> | undefined
+    error ?: string
 }
 
-const CustomSelectField = ({name, label, data, value, onChange}: ICustomSelectFieldProps) => {
+const CustomSelectField = ({name, label, data, value, error,onChange}: ICustomSelectFieldProps) => {
   return (
     <Grid item xs={4}>
         <TextField
@@ -23,6 +24,8 @@ const CustomSelectField = ({name, label, data, value, onChange}: ICustomSelectFi
             value={value}
             onChange={onChange}
             fullWidth
+            error = {error ? true : false}
+            helperText = {error}
         >
             {
                 data.map((item) => (
