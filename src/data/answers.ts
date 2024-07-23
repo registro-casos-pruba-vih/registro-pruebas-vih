@@ -56,8 +56,8 @@ export const typeResolution = [
         value: 'Parto'
     },
     {
-        label: 'Cesaria',
-        value: 'Cesaria'
+        label: 'Cesária',
+        value: 'Cesária'
     },
     {
         label: 'Aborto',

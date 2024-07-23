@@ -6,13 +6,15 @@ import { Formik, FormikErrors } from 'formik'
 
 import PersonalInfoForm from './components/PersonalInfoForm'
 import MedicalForm from './components/MedicalForm'
+import DetectionsForm from './components/DetectionsForm'
+import CovidForm from './components/CovidForm'
 import CustomButton from '@/components/CustomButton/CustomButton'
 
 import styles from './page.module.css'
 
 import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+
 import validationForm from './validations/validationForm'
-import DetectionsForm from './components/DetectionsForm'
 
 const page = () => {
 
@@ -99,6 +101,12 @@ const page = () => {
         metodo_planificacion_familiar: "",
         registrar_metodo: ""
       }
+    },
+    vacunacion_covid: {
+      vacuno: "",
+      nombre_vacuna: "",
+      presento_efectos: "",
+      cual: "",
     }
   }
 
@@ -138,6 +146,8 @@ const page = () => {
           if (progress !== 75) {
             setProgress(progress + 25)
             window.screenTop
+          } else {
+            console.log(values)
           }
         }}
       >
@@ -170,6 +180,15 @@ const page = () => {
 
           {progress === 50 &&
             <DetectionsForm
+              values={values}
+              handleChange={handleChange}
+              errors={errors}
+            />
+          }
+
+          {
+            progress === 75 &&
+            <CovidForm
               values={values}
               handleChange={handleChange}
               errors={errors}

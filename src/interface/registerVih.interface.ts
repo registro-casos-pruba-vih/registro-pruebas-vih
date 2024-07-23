@@ -79,7 +79,13 @@ export interface RegisterVihInterface {
             metodo_planificacion_familiar: "" | boolean
             registrar_metodo: string
         }
-    }
+    },
+    vacunacion_covid: {
+        vacuno: "" | boolean
+        nombre_vacuna: string
+        presento_efectos: "" | boolean
+        cual: string
+    } 
 }
 
 export interface RegisterVihErrorInterface {
