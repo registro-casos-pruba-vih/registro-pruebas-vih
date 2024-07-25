@@ -18,7 +18,7 @@ const TableRecordsVIH = () => {
           getPatients()
           flag.current = true
      }
-  },[])
+  })
 
   return (
     <Paper sx={{ width: '100%'}}>

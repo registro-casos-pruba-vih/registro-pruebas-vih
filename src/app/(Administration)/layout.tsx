@@ -5,7 +5,7 @@ import { AppBar, Avatar, Box, Container, IconButton, Menu, MenuItem, Toolbar } f
 
 import styles from './layout.module.css'
 
-const layout = ({children}: {children: React.ReactNode}) => {
+const Layout = ({children}: {children: React.ReactNode}) => {
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -48,4 +48,4 @@ const layout = ({children}: {children: React.ReactNode}) => {
   )
 }
 
-export default layout
+export default Layout

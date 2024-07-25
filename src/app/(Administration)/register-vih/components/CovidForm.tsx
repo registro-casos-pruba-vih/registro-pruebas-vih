@@ -5,7 +5,7 @@ import GroupForm from '@/components/GroupFrom/GroupForm'
 import CustomTextField from './CustomTextField'
 import CustomSelectField from './CustomSelectField'
 
-import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interfaces/registerVih.interface'
 import { afirmativeAndNegative } from '@/data/answers'
 
 interface ICovidFormProps {

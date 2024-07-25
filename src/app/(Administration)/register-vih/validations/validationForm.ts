@@ -1,4 +1,4 @@
-import { RegisterVihErrorInterface, RegisterVihInterface } from "@/interface/registerVih.interface"
+import { RegisterVihErrorInterface, RegisterVihInterface } from "@/interfaces/registerVih.interface"
 import { FormikErrors } from "formik"
 
 const validationForm = (values: RegisterVihInterface) => {

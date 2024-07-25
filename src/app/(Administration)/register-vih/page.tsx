@@ -19,7 +19,7 @@ import validationForm from './validations/validationForm'
 
 import { Context as PatientContext } from '@/context/PatientContext'
 
-const page = () => {
+const Page = () => {
 
   const router = useRouter()
 
@@ -218,4 +218,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

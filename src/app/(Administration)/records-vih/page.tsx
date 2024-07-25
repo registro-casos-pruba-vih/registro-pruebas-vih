@@ -7,7 +7,7 @@ import TableRecordsVIH from './components/TableRecordsVIH'
 import CustomButton from '@/components/CustomButton/CustomButton'
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const Page = () => {
 
   const router = useRouter()
 
@@ -29,4 +29,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
