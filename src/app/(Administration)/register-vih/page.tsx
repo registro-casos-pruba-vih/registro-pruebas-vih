@@ -1,8 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useContext } from 'react'
 import {Box, LinearProgress, Typography} from '@mui/material'
 import { Formik, FormikErrors } from 'formik'
+import { useRouter } from 'next/navigation'
 
 import PersonalInfoForm from './components/PersonalInfoForm'
 import MedicalForm from './components/MedicalForm'
@@ -12,11 +13,17 @@ import CustomButton from '@/components/CustomButton/CustomButton'
 
 import styles from './page.module.css'
 
-import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interfaces/registerVih.interface'
 
 import validationForm from './validations/validationForm'
 
+import { Context as PatientContext } from '@/context/PatientContext'
+
 const page = () => {
+
+  const router = useRouter()
+
+  const {createPatient} = useContext(PatientContext)
 
   const [progress, setProgress] = React.useState(0);
   const [buttonName, setButtonName] = React.useState('Siguiente');
@@ -147,7 +154,10 @@ const page = () => {
             setProgress(progress + 25)
             window.screenTop
           } else {
-            console.log(values)
+            const response = createPatient(values)
+            if (response) {
+              router.push('/records-vih')
+            }
           }
         }}
       >

@@ -2,7 +2,7 @@ import React from 'react'
 import { FormikErrors } from 'formik'
 import GroupForm from '@/components/GroupFrom/GroupForm'
 
-import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interfaces/registerVih.interface'
 
 import CustomDateField from './CustomDateField'
 import CustomTextField from './CustomTextField'

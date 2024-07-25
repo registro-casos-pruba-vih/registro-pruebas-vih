@@ -6,7 +6,7 @@ import SubGroupForm from '@/components/SubGroupForm/SubGroupForm'
 import CustomSelectField from './CustomSelectField';
 import CustomTextField from './CustomTextField'
 
-import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interfaces/registerVih.interface'
 
 import { afirmativeAndNegative, reactive, violenceDetection } from '../../../../data/answers';
 import CustomTextArea from './CustomTextArea/CustomTextArea';

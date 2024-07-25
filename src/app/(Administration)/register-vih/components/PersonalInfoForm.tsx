@@ -5,7 +5,7 @@ import GroupForm from '@/components/GroupFrom/GroupForm'
 import SubGroupForm from '@/components/SubGroupForm/SubGroupForm'
 import CustomTextField from './CustomTextField'
 
-import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interface/registerVih.interface'
+import { RegisterVihErrorInterface, RegisterVihInterface } from '@/interfaces/registerVih.interface'
 import CustomSelectField from './CustomSelectField'
 import { afirmativeAndNegative, closedSchool, socialSecurity } from '@/data/answers'
 
@@ -186,7 +186,6 @@ const PersonalInfoForm = ({values, errors,handleChange}: IPersonalInfoFormProps)
                     name="ficha_identificacion.numero_expediente"
                     label="No. expediente"
                     onChange={handleChange}
-                    type='number'
                     value={values.ficha_identificacion?.numero_expediente}
                     error={errors.ficha_identificacion?.numero_expediente}
                 />

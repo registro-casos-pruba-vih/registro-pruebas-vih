@@ -12,7 +12,6 @@ export default function Home() {
   const {push} = useRouter()
   
   const handleSubmit = () => {
-    console.log('submit')
     push('/records-vih');
   }
 

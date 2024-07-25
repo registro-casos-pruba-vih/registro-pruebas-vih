@@ -1,9 +1,11 @@
 import React from 'react'
-import { TableCell, TableHead, TableRow } from '@mui/material'
+import {TableCell, TableHead, TableRow } from '@mui/material'
+
 
 import styles from '../page.module.css'
 
 const TableHeadRecordVIH = () => {
+
   return (
     <TableHead className={styles['table-container']}>
         <TableRow>
@@ -395,6 +397,15 @@ const TableHeadRecordVIH = () => {
                 }}    
             >
                 Desarrollo comunitario
+            </TableCell>
+            <TableCell
+                align='center'
+                colSpan={1}
+                sx={{
+                backgroundColor: '#fff2cc'
+                }}
+            >
+                ¿Vacuno?
             </TableCell>
             <TableCell 
                 align='center'
@@ -793,6 +804,12 @@ const TableHeadRecordVIH = () => {
             />
             <TableCell 
                 align='center' 
+                sx={{
+                backgroundColor: '#fff2cc'
+                }}
+            />
+            <TableCell
+                align='center'
                 sx={{
                 backgroundColor: '#fff2cc'
                 }}
