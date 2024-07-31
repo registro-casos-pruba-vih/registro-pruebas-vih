@@ -1,8 +1,11 @@
 :root {
   --principal-color: #81B622;
   --title-color: #59981A;
+  --label-field-color: #828282;
   --button-color: #59981A;
   --button-color-hover: #3D550C;
+  --error-color: #D85555;
+  --bg-box-color: #e6e6e6;
 }
 
 body {

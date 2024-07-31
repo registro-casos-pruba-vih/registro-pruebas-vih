@@ -1,0 +1,11 @@
+.text-field {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--label-field-color);
+    overflow-y: scroll;
+}
+
+.text-value {
+    font-weight: 600;
+    font-size: large;
+}
