@@ -1,11 +1,13 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import styles from './page.module.css'
+
 import TableRecordsVIH from './components/TableRecordsVIH'
+import ModalRecordVIH from './components/ModalRecordVIH/ModalRecordVIH'
 import CustomButton from '@/components/CustomButton/CustomButton'
-import { useRouter } from 'next/navigation'
 
 const Page = () => {
 
@@ -24,6 +26,8 @@ const Page = () => {
         />
       </div>
 
+      <ModalRecordVIH/>
+      
       <TableRecordsVIH />
     </div>
   )

@@ -9,19 +9,24 @@ import { RegisterVihInterface } from "@/interfaces/registerVih.interface";
 
 export interface PatientState {
     patients: PatientInterface[];
+    patient: PatientInterface | null;
     loading: boolean;
     error: string;
 }
 
 export type PatientAction = 
-    | {type: 'CREATE_PATIENT', payload: PatientInterface} 
+    | {type: 'CREATE_PATIENT', payload: PatientInterface}
     | {type: 'GET_PATIENTS', payload: PatientInterface[]}
+    | {type: 'GET_PATIENT', payload: PatientInterface}
+    | {type: 'CLEAR_PATIENT'}
     | {type: 'IS_LOADING'}
 
 type PatientContextProps = {
     state: PatientState,
     createPatient: (patient: RegisterVihInterface) => boolean
-    getPatients: () => void
+    getPatients: () => void,
+    getPatient: (id: string) => void
+    clearPatient: () => void
 }
 
 const patientReduce =(state: PatientState, action: PatientAction): PatientState => {
@@ -31,12 +36,26 @@ const patientReduce =(state: PatientState, action: PatientAction): PatientState 
                 ...state,
                 loading: false,
                 patients: [...state.patients, action.payload],
+                patient: null
             }
         case 'GET_PATIENTS':
             return {
                 ...state,
                 loading: false,
                 patients: action.payload,
+                patient: null
+            }
+        case 'GET_PATIENT':
+            return {
+                ...state,
+                loading: false,
+                patient: action.payload
+            }
+        case 'CLEAR_PATIENT':
+            return {
+                ...state,
+                loading: false,
+                patient: null
             }
         case 'IS_LOADING':
             return {
@@ -87,15 +106,38 @@ const getPatients = (dispatch: Dispatch<PatientAction>) => async() => {
     }
 }
 
+const getPatient = (dispatch: Dispatch<PatientAction>) => async(id: string) => {
+
+    try {
+        
+        const response = await dbApi.get<PatientInterface>(`/patient/${id}`)
+
+        dispatch({
+            type: 'GET_PATIENT',
+            payload: response.data
+        })
+    } catch(error) {
+        console.log(error)
+    }
+}
+
+const clearPatient = (dispatch: Dispatch<PatientAction>) => async() => {
+    dispatch({
+        type: 'CLEAR_PATIENT'
+    })
+}
 
 
 export const {Provider, Context} = dataContext<PatientContextProps>(patientReduce, 
     {
         createPatient,
-        getPatients
+        getPatients,
+        getPatient,
+        clearPatient
     },
     {
         patients: [],
+        patient: null,
         loading: false,
         error: ''
     }

@@ -1,0 +1,7 @@
+.container-box {
+    background-color: var(--bg-box-color);
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    padding: 10px;
+}

@@ -1,8 +1,14 @@
-import { PatientInterface } from '@/interfaces/patient.interface'
+import React, { useContext } from 'react'
 import { TableBody, TableCell, TableRow } from '@mui/material'
-import React from 'react'
+
+import { PatientInterface } from '@/interfaces/patient.interface'
+
+import { Context as PatientContext } from '@/context/PatientContext'
 
 const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
+
+    const { getPatient } = useContext(PatientContext)
+
   return (
     <TableBody>
         {
@@ -10,6 +16,12 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
             <TableRow
                 key={patient._id}
                 hover
+                sx={{
+                    ":hover": {
+                        cursor: 'pointer'
+                    }
+                }}
+                onClick={() => getPatient(patient._id)}
             >
                 <TableCell
                     align="center"
@@ -264,7 +276,7 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
                         backgroundColor: patient.control_prenatal.acido_folico === '' ? '#D85555' : 'transparent'
                     }}
                 >
-                    {patient.control_prenatal.acido_folico === 'true' ? 'Si' : 'No'}
+                    {patient.control_prenatal.acido_folico === 'true' ? 'Si' : patient.control_prenatal.acido_folico === 'false' ? 'No' : ''}
                 </TableCell>
                 <TableCell
                     align="center"
@@ -273,7 +285,7 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
                         backgroundColor: patient.control_prenatal.sulfato_ferroso === '' ? '#D85555' : 'transparent'
                     }}
                 >
-                    {patient.control_prenatal.sulfato_ferroso === 'true' ? 'Si' : 'No'}
+                    {patient.control_prenatal.sulfato_ferroso === 'true' ? 'Si' : patient.control_prenatal.sulfato_ferroso === 'false' ? 'No' : ''}
                 </TableCell>
                 <TableCell
                     align="center"
@@ -282,7 +294,7 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
                         backgroundColor: patient.control_prenatal.inmunizaciones.vacuna_tetano === '' ? '#D85555' : 'transparent'
                     }}
                 >
-                    {patient.control_prenatal.inmunizaciones.vacuna_tetano === 'true' ? 'Si' : 'No'}
+                    {patient.control_prenatal.inmunizaciones.vacuna_tetano === 'true' ? 'Si' : patient.control_prenatal.inmunizaciones.vacuna_tetano === 'false' ? 'No' : ''}
                 </TableCell>
                 <TableCell
                     align="center"
@@ -291,7 +303,7 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
                         backgroundColor: patient.control_prenatal.inmunizaciones.vacuna_difteria === '' ? '#D85555' : 'transparent'
                     }}
                 >
-                    {patient.control_prenatal.inmunizaciones.vacuna_difteria === 'true' ? 'Si' : 'No'}
+                    {patient.control_prenatal.inmunizaciones.vacuna_difteria === 'true' ? 'Si' : patient.control_prenatal.inmunizaciones.vacuna_difteria === 'false' ? 'No' : ''}
                 </TableCell>
                 <TableCell
                     align="center"
@@ -300,7 +312,7 @@ const TableBodyRecordVIH = ({patients}:{patients: PatientInterface[]}) => {
                         backgroundColor: patient.control_prenatal.inmunizaciones.vacuna_influenza === '' ? '#D85555' : 'transparent'
                     }}
                 >
-                    {patient.control_prenatal.inmunizaciones.vacuna_influenza === 'true' ? 'Si' : 'No'}
+                    {patient.control_prenatal.inmunizaciones.vacuna_influenza === 'true' ? 'Si' : patient.control_prenatal.inmunizaciones.vacuna_influenza === 'false' ? 'No' : ''}
                 </TableCell>
                 <TableCell
                     align="center"
